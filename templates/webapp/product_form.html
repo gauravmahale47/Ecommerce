@@ -1,0 +1,33 @@
+{% extends "webapp/base.html" %}
+{% block title %}Add Product{% endblock title %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 mb-3">
+            <h1 class="font-monospace text-dark text-center">Update</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 border rounded-3 border-dark text-secondary py-3 ps-5 pl-sm-2 py-sm-2">
+            <table class="table table-borderless table-hover">
+                <form method="post" novalidate enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <tr>
+                        <td>
+                            {{form.as_table}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-end">
+                            <input type="submit" class="btn btn-dark font-monospace text-white" value="Update">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+{% endblock content %}

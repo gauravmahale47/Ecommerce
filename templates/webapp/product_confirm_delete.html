@@ -1,0 +1,28 @@
+{% extends "webapp/base.html" %}
+{% block title %}Confrim Delete{% endblock title %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 mb-3">
+            <h1 class="font-monospace text-dark text-center">Are you sure want to delete?</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-secondary py-3 ps-5 pl-sm-2 py-sm-2">
+            <table align="center">
+                <form method="post" >
+                    {% csrf_token %}
+                    <tr>
+                        <td>
+                            <input type="submit" class="text-center btn btn-danger text-white" value="Confirm">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+{% endblock content %}
